@@ -264,4 +264,11 @@ public class CacheRepository {
         return response;
 
     }
+
+    public Map<String, Object> readLocationFromFirestore(String key)throws Exception {
+
+        ApiFuture<DocumentSnapshot> documentSnapshotApiFuture = firestore.collection(LOCATIONS).document(key).get();
+        DocumentSnapshot documentSnapshot = documentSnapshotApiFuture.get();
+        return documentSnapshot.getData();
+    }
 }

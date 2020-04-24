@@ -13,6 +13,7 @@ public class Constants {
     public  static  final String CITY = "city";
     public  static  final String ZIP_CODE = "zipCode";
     public  static  final String KEY = "key";
+    public  static  final String LOCATIONS = "locations";
 
     public  static final String LAST_UPD_TS = "lastUpdTs";
     public  static final String LAST_UPD_USER = "lastUpdUser";

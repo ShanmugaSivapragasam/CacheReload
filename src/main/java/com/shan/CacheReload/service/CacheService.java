@@ -1,7 +1,6 @@
 package com.shan.CacheReload.service;
 
 
-import com.google.cloud.firestore.WriteResult;
 import com.shan.CacheReload.contract.JobRequest;
 import com.shan.CacheReload.contract.JobResponse;
 import com.shan.CacheReload.repository.CacheRepository;
@@ -117,5 +116,11 @@ public class CacheService {
 //        return SerializationHelper.objectMapper.writeValueAsString(locationCapacityList);
     }
 
+
+    public Map<String, Object> getLocationDetailsFromFirestore(String key) throws Exception {
+        Map<String, Object> location = cacheRepository.readLocationFromFirestore(key);
+        log.info(" read from Firestore for key " + key + "location details " + location );
+        return  location;
+    }
 
 }

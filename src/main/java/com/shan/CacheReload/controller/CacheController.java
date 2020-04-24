@@ -46,5 +46,12 @@ public class CacheController {
         Map<String, String> response = cacheService.getLocationDetails(id);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
+
+    @GetMapping("/firestore/stores/{id}")
+    public ResponseEntity<Map<String, Object>> getLocationDetailsFromFirestore(@PathVariable String id) throws  Exception{
+        Map<String, Object> response = cacheService.getLocationDetailsFromFirestore(id);
+        return new ResponseEntity<>(response, HttpStatus.OK);
+
+    }
 }
 
